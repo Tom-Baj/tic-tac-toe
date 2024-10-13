@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,28 +15,60 @@
   </head>
   <body>
     <div class="main">
-      <h1 class="title">Tic Tac Toe</h1>
+      <div class="titre-container">
+        <h1 class="title">Tic Tac Toe</h1>
+      </div>
 
-      <form action=""></form>
+      <div class="form-container">
+        <form action="" class="form hidden">
+          <div class="nombre-joueurs">
+            <label for="player-select" class="label-select"
+              >Nombre de joueur :</label
+            >
+            <select type="select" id="player-select" class="player-select">
+              <option value="1">1 joueur</option>
+              <option value="2">2 joueurs</option>
+            </select>
+          </div>
+          <div class="nom-joueur">
+            <label for="player" class="player-1">Nom du joueur : </label>
+            <input
+              type="text"
+              name="player"
+              id="player"
+              placeholder="Joueur 1"
+              class="player-1"
+            />
+          </div>
+          <div class="bouton-play">
+            <button type="button" class="play">Jouer</button>
+          </div>
+        </form>
+      </div>
 
       <div class="game-container">
-        <div class="tour-joueur"></div>
-        <div class="grid-container">
-          <div class="zone-jeux case-1"></div>
-          <div class="zone-jeux case-2"></div>
-          <div class="zone-jeux case-3"></div>
-          <div class="zone-jeux case-4"></div>
-          <div class="zone-jeux case-5"></div>
-          <div class="zone-jeux case-6"></div>
-          <div class="zone-jeux case-7"></div>
-          <div class="zone-jeux case-8"></div>
-          <div class="zone-jeux case-9"></div>
+        <div class="game-container">
+          <div class="joueur-container">
+            <p>Zone joueur<span class="span-joueur"></span></p>
+          </div>
+          <div class="grid-container">
+            <div class="zone-jeux case-1"></div>
+            <div class="zone-jeux case-2"></div>
+            <div class="zone-jeux case-3"></div>
+            <div class="zone-jeux case-4"></div>
+            <div class="zone-jeux case-5"></div>
+            <div class="zone-jeux case-6"></div>
+            <div class="zone-jeux case-7"></div>
+            <div class="zone-jeux case-8"></div>
+            <div class="zone-jeux case-9"></div>
+          </div>
+          <div class="score-container">
+            <h2 class="score">Score :</h2>
+          </div>
         </div>
-      </div>
-      <div class="score-container">
-        <h2 class="score">Score :</h2>
       </div>
     </div>
     <div class="footer"></div>
+    <script src="script.js"></script>
   </body>
 </html>
