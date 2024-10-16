@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="48x48" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +16,7 @@
   <body>
     <div class="main">
       <div class="titre-container">
-        <h1 class="title">Tic Tac Toe</h1>
+        <h1 class="title">Tic <span class="title-span">Tac</span> Toe</h1>
       </div>
 
       <div class="form-container">
@@ -47,28 +47,45 @@
       </div>
 
       <div class="game-container">
-        <div class="game-container">
-          <div class="joueur-container">
-            <p>Zone joueur<span class="span-joueur"></span></p>
+        <div class="joueur-container">
+          <div class="zone-joueur-1">
+            <h2 class="joueur-1">Joueur <span class="x">X</span></h2>
           </div>
-          <div class="grid-container">
-            <div class="zone-jeux case-1"></div>
-            <div class="zone-jeux case-2"></div>
-            <div class="zone-jeux case-3"></div>
-            <div class="zone-jeux case-4"></div>
-            <div class="zone-jeux case-5"></div>
-            <div class="zone-jeux case-6"></div>
-            <div class="zone-jeux case-7"></div>
-            <div class="zone-jeux case-8"></div>
-            <div class="zone-jeux case-9"></div>
+          <div class="zone-joueur-2">
+            <h2 class="joueur-2">Joueur <span class="o">O</span></h2>
           </div>
-          <div class="score-container">
-            <h2 class="score">Score :</h2>
+        </div>
+        <div class="tour-container">
+          <p class="tour">
+            <span class="choix-tour"></span>
+          </p>
+        </div>
+        <div class="grid-container">
+          <div id="0" class="zone-jeux case case-0"></div>
+          <div id="1" class="zone-jeux case case-1"></div>
+          <div id="2" class="zone-jeux case case-2"></div>
+          <div id="3" class="zone-jeux case case-3"></div>
+          <div id="4" class="zone-jeux case case-4"></div>
+          <div id="5" class="zone-jeux case case-5"></div>
+          <div id="6" class="zone-jeux case case-6"></div>
+          <div id="7" class="zone-jeux case case-7"></div>
+          <div id="8" class="zone-jeux case case-8"></div>
+        </div>
+        <div class="score-container">
+          <div class="score-title">
+            <h2>Scores</h2>
           </div>
+          <div class="score-text">
+            <p>Joueur X : <span id="scoreX">0</span></p>
+            <p>Joueur O : <span id="scoreO">0</span></p>
+          </div>
+        </div>
+        <div class="footer">
+          <button class="reinitialiser">reinitialiser le jeu</button>
         </div>
       </div>
     </div>
-    <div class="footer"></div>
+
     <script src="script.js"></script>
   </body>
 </html>

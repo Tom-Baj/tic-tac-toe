@@ -40,12 +40,16 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--light-blue);
-  color: var(--creme);
+  color: var(--black);
 }
 
-h1.title {
-  color: var(--creme);
+.title {
+  color: var(--red);
   text-align: center;
+
+  span {
+    color: var(--green);
+  }
 }
 
 h2 {
@@ -67,15 +71,25 @@ form {
   }
 }
 
+/* Tour */
+.tour {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  font-size: 24px;
+}
+
 /* Game */
 .game-container {
   display: flex;
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  width: 550px;
-  height: 550px;
-  margin: 3rem auto 0 auto;
+  width: 50%;
+  height: 50%;
+  margin: 2rem auto;
+  padding: 20px;
   border-radius: 10px;
   background-color: var(--creme);
   box-shadow: -26px 33px 39px -18px rgba(0, 0, 0, 0.3);
@@ -84,19 +98,15 @@ form {
 /* Joueurs */
 .joueur-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-content: center;
-  flex-direction: column;
   color: var(--black);
-  margin: auto;
 }
 
 /* Grid */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 100%;
-  height: 100%;
   margin: auto;
   padding: 15px;
   background-color: var(--light-blue);
@@ -107,14 +117,220 @@ form {
 }
 
 .zone-jeux {
-  margin: 5px;
-  border-width: 1px 1px 5px 5px;
+  margin: 3px;
+  border-width: 2px 2px 7px 7px;
   border-style: solid;
   border-color: var(--dark-blue);
   border-radius: 5px;
+  background-color: var(--creme);
+  height: 100px;
+  width: 100px;
+  font-size: 4rem;
+  padding-top: 15px;
+}
+
+/* Button */
+.reinitialiser {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 0 auto 15px auto;
+  width: 20%;
+  text-align: center;
+}
+
+/* Score */
+.score-title {
+  border-bottom: 2px solid var(--dark-blue);
+  width: 50%;
+  margin: 1rem auto;
+}
+
+.score-text {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  margin: 1rem;
 }
 
 /* Other */
 .hidden {
   display: none;
+}
+
+/* Joueur X */
+.joueur1 {
+  background-color: var(--green);
+  color: var(--alice-blue);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.x {
+  color: var(--green);
+}
+
+.o {
+  color: var(--red);
+}
+
+/* Joueur O */
+.joueur2 {
+  background-color: var(--red);
+  color: var(--alice-blue);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .game-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5px;
+  }
+
+  .zone-jeux {
+    height: 22vw;
+    width: 22vw;
+    font-size: 5vw;
+  }
+
+  .reinitialiser {
+    width: 50%;
+    font-size: 14px;
+  }
+
+  .score-title {
+    width: 90%;
+  }
+
+  .tour {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .game-container {
+    width: 75%;
+    padding: 20px;
+  }
+
+  .grid-container {
+    padding: 15px;
+  }
+
+  .zone-jeux {
+    height: 16vw;
+    width: 16vw;
+    font-size: 3.5vw;
+  }
+
+  .reinitialiser {
+    width: 30%;
+  }
+
+  .score-title {
+    width: 70%;
+  }
+
+  .tour {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .game-container {
+    width: 65%;
+    padding: 25px;
+  }
+
+  .grid-container {
+    padding: 20px;
+  }
+
+  .zone-jeux {
+    height: 14vw;
+    width: 14vw;
+    font-size: 3vw;
+  }
+
+  .reinitialiser {
+    width: 25%;
+  }
+
+  .score-title {
+    width: 60%;
+  }
+
+  .tour {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1600px) {
+  .game-container {
+    width: 50%;
+  }
+
+  .grid-container {
+    padding: 25px;
+  }
+
+  .zone-jeux {
+    height: 12vw;
+    width: 12vw;
+    font-size: 2.5vw;
+  }
+
+  .reinitialiser {
+    width: 20%;
+  }
+
+  .score-title {
+    width: 50%;
+  }
+
+  .tour {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 1601px) {
+  .game-container {
+    width: 40%;
+  }
+
+  .grid-container {
+    padding: 30px;
+  }
+
+  .zone-jeux {
+    height: 10vw;
+    width: 10vw;
+    font-size: 2vw;
+  }
+
+  .reinitialiser {
+    width: 15%;
+  }
+
+  .score-title {
+    width: 40%;
+  }
+
+  .tour {
+    font-size: 28px;
+  }
 }
