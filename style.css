@@ -34,41 +34,27 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 20px;
+  background: linear-gradient(135deg, var(--light-blue), var(--dark-blue));
+  color: var(--black);
   margin: 0;
   padding: 0;
-  background-color: var(--light-blue);
-  color: var(--black);
 }
 
 .title {
+  font-family: "Poppins", sans-serif;
   color: var(--red);
   text-align: center;
+  font-size: 3rem;
+  margin-top: 2rem;
+}
 
-  span {
-    color: var(--green);
-  }
+.title-span {
+  color: var(--green);
 }
 
 h2 {
   color: var(--black);
   text-align: center;
-}
-
-/* Introduction */
-
-/* Form */
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1rem;
-
-  div {
-    margin: 1rem;
-  }
 }
 
 /* Tour */
@@ -129,14 +115,29 @@ form {
   padding-top: 15px;
 }
 
+.zone-jeux:hover {
+  transform: scale(1.05);
+}
+
 /* Button */
 .reinitialiser {
   display: flex;
-  align-content: center;
   justify-content: center;
-  margin: 0 auto 15px auto;
-  width: 20%;
-  text-align: center;
+  align-items: center;
+  margin: auto;
+  padding: 10px 20px;
+  background-color: var(--red);
+  border: none;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 50%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.reinitialiser:hover {
+  background-color: var(--green);
+  transform: scale(1.1);
 }
 
 /* Score */
@@ -172,10 +173,6 @@ form {
   color: var(--green);
 }
 
-.o {
-  color: var(--red);
-}
-
 /* Joueur O */
 .joueur2 {
   background-color: var(--red);
@@ -184,6 +181,26 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.o {
+  color: var(--red);
+}
+
+.gagnant {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    background-color: var(--creme);
+  }
+  50% {
+    background-color: var(--light-blue);
+  }
+  100% {
+    background-color: var(--creme);
+  }
 }
 
 @media (max-width: 600px) {
@@ -238,7 +255,7 @@ form {
   }
 
   .reinitialiser {
-    width: 30%;
+    width: 50%;
   }
 
   .score-title {
@@ -267,7 +284,7 @@ form {
   }
 
   .reinitialiser {
-    width: 25%;
+    width: 50%;
   }
 
   .score-title {
@@ -295,7 +312,7 @@ form {
   }
 
   .reinitialiser {
-    width: 20%;
+    width: 50%;
   }
 
   .score-title {
@@ -323,7 +340,7 @@ form {
   }
 
   .reinitialiser {
-    width: 15%;
+    width: 50%;
   }
 
   .score-title {

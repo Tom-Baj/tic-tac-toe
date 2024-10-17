@@ -1,6 +1,7 @@
 const cases = document.querySelectorAll(".case");
 const choixTour = document.querySelector(".choix-tour");
 const resetButton = document.querySelector(".reinitialiser");
+
 let joueur1 = "X";
 let joueur2 = "O";
 
@@ -52,6 +53,9 @@ function verifierVictoire() {
 
     if (plateau[a] && plateau[a] === plateau[b] && plateau[a] === plateau[c]) {
       gagnant = plateau[a];
+      cases[a].classList.add("gagnant");
+      cases[b].classList.add("gagnant");
+      cases[c].classList.add("gagnant");
       break;
     }
   }
@@ -88,6 +92,9 @@ function reinitialiserJeu() {
   gagnant = "";
   choixTour.textContent = "C'est au tour du joueur X";
   cases.forEach((cell) => (cell.style.pointerEvents = "auto"));
+  const blink = document.querySelectorAll(".gagnant");
+
+  blink.forEach((cell) => cell.classList.remove("gagnant"));
 }
 
 cases.forEach((cell) => {
