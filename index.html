@@ -1,66 +1,100 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png" sizes="48x48" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Tic Tac Toe</title>
-  </head>
-  <body>
-    <div class="main">
-      <div class="titre-container">
-        <h1 class="title">Tic <span class="title-span">Tac</span> Toe</h1>
-      </div>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" type="image/png" href="/favicon.png" sizes="48x48" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Poppins:wght@700&family=Roboto:wght@400&family=Staatliches&display&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+         rel="stylesheet"
+      />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      />
+      <link rel="stylesheet" href="style.css" />
+      <script
+         src="https://kit.fontawesome.com/cf77ed01e9.js"
+         crossorigin="anonymous"
+      ></script>
+      <title>Tic Tac Toe</title>
+   </head>
 
-      <div class="game-container">
-        <div class="joueur-container">
-          <div class="zone-joueur-1">
-            <h2 class="joueur-1">Joueur <i class="fas fa-times"></i></h2>
-          </div>
-          <div class="zone-joueur-2">
-            <h2 class="joueur-2">Joueur <i class="far fa-circle"></i></h2>
-          </div>
-        </div>
-        <div class="tour-container">
-          <p class="tour">
-            <span class="choix-tour">C'est au tour du joueur X</span>
-          </p>
-        </div>
-        <div class="grid-container">
-          <div id="0" class="zone-jeux case case-0"></div>
-          <div id="1" class="zone-jeux case case-1"></div>
-          <div id="2" class="zone-jeux case case-2"></div>
-          <div id="3" class="zone-jeux case case-3"></div>
-          <div id="4" class="zone-jeux case case-4"></div>
-          <div id="5" class="zone-jeux case case-5"></div>
-          <div id="6" class="zone-jeux case case-6"></div>
-          <div id="7" class="zone-jeux case case-7"></div>
-          <div id="8" class="zone-jeux case case-8"></div>
-        </div>
-        <div class="score-container">
-          <div class="score-title">
-            <h2>Scores</h2>
-          </div>
-          <div class="score-text">
-            <p>Joueur X : <span id="scoreX">0</span></p>
-            <p>Joueur O : <span id="scoreO">0</span></p>
-          </div>
-        </div>
-        <div class="footer">
-          <button class="reinitialiser">Réinitialiser le jeu</button>
-        </div>
+   <body>
+      <div class="header hidden">
+         <img class="logo" src="logo.png" alt="logo du site" />
       </div>
-    </div>
+      <div class="main">
+         <div class="acceuil-container">
+            <div class="titre-container">
+               <h1 class="title">
+                  <span class="tic"> Tic </span>
+                  <span class="tac"> Tac </span>
+                  <span class="toe"> Toe </span>
+               </h1>
+            </div>
+            <div class="start-container">
+               <button class="play-button" type="button">
+                  <span class="text-jouer">Jouer</span>
+               </button>
+            </div>
+         </div>
 
-    <script src="script.js"></script>
-  </body>
+         <div class="game-container hidden">
+            <div class="grid-container">
+               <div id="0" class="zone-jeux case case-0"></div>
+               <div id="1" class="zone-jeux case case-1"></div>
+               <div id="2" class="zone-jeux case case-2"></div>
+               <div id="3" class="zone-jeux case case-3"></div>
+               <div id="4" class="zone-jeux case case-4"></div>
+               <div id="5" class="zone-jeux case case-5"></div>
+               <div id="6" class="zone-jeux case case-6"></div>
+               <div id="7" class="zone-jeux case case-7"></div>
+               <div id="8" class="zone-jeux case case-8"></div>
+            </div>
+            <div class="joueur-container">
+               <div class="tour-container">
+                  <p class="tour">
+                     <span class="choix-tour">C'est au tour du joueur </span>
+                  </p>
+               </div>
+               <div class="score-container">
+                  <div class="score-title">
+                     <h2>
+                        <i class="fa-solid fa-trophy score-icon"></i> Scores
+                     </h2>
+                  </div>
+                  <div class="score-text">
+                     <div class="score-entry">
+                        <i class="fa-solid fa-xmark x"></i>
+                        <span>Joueur X :</span>
+                        <span id="scoreX">0</span>
+                     </div>
+                     <div class="score-entry">
+                        <i class="fa-solid fa-o o"></i>
+                        <span>Joueur O :</span>
+                        <span id="scoreO">0</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="button-container">
+                  <button class="reinitialiser">
+                     <i class="fa-solid fa-rotate-right"></i>Rejouer
+                  </button>
+               </div>
+            </div>
+            <div class="back-container">
+               <button class="back-button" type="button">
+                  <i class="fa-solid fa-door-open"></i>
+               </button>
+            </div>
+         </div>
+      </div>
+      <div class="footer hidden">
+         <p>&copy; 2025 Tic Tac Toe. Tous droits réservés.</p>
+      </div>
+      <script src="script.js"></script>
+   </body>
 </html>
